@@ -1,3 +1,15 @@
+#=
+DESCRIPTION: Pade approximation for the linear dispersion
+AUTHOR: ZhisongLi@Shanghai Jiao Tong University
+TIME: 2020-06-07
+EMAIL: lizhisong@sjtu.edu.cn, for bug(s) report only.
+ACADEMIC LITERATURE(S):
+    Witting, J. M. (1984). A unified model for the evolution of nonlinear water waves. 56(2):203–236.
+    
+UPDATE HISTORY:
+    yyyy-mm-dd:
+=#
+
 
 println("Loading packages ...")
 # using CSV
@@ -32,7 +44,7 @@ y2=Pada0.(x, 2)
 y3=Pada0.(x, 3)
 y4=Pada0.(x, 4)
 
-FigureName="../ch01/FigurePadaApproximation"
+FigureName="FigurePadaApproximation"
 
 
 println("Drawing a Figure ...")
