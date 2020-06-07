@@ -14,7 +14,7 @@ UPDATE HISTORY:
 println("Loading packages ...")
 # using CSV
 using PyPlot
-using LaTeXStrings
+# using LaTeXStrings
 # using DelimitedFiles
 
 println("Preparing data")
@@ -58,17 +58,20 @@ ax1.plot(
     , x, y3, "m-"
     , x, y4, "g-", linewidth=1.50)
 
-ax1.set_xlabel("kh", fontname="Times New Roman", fontsize=14)
-ax1.set_ylabel("c^2/gh", fontname="Times New Roman", fontsize=14)
+ax1.set_xlabel(L"$kh$", fontname="Times New Roman", fontsize=14)
+ax1.set_ylabel(L"\frac{c^2}{gh}", fontname="Times New Roman", fontsize=14)
 # ax1.set_title("Linear dispersion", fontname="Times New Roman")
+# ax1.set_title(L"Plot of $\Gamma_3(x)$")
 ax1.set_xlim([0, 3pi])
 ax1.set_ylim([0, 1])
 
 ax1.set_xticks([0:0.5pi:3pi]...)
 # ax1.set_xticklabels(("Tom", "Dick", "Harry", "Sally", "Sue", "Zhisong"))
-ax1.set_xticklabels(["0", "0.5pi", "1.0pi", "1.5pi", "2.0pi", "2.5pi", "3.0pi"], fontname="Times New Roman", fontsize=14)
+ax1.set_xticklabels(["0", L"\frac{1}{2}\pi", L"\pi", L"\frac{3}{2}\pi", L"2\pi", L"\frac{5}{2}\pi", L"3\pi"]
+, fontname="Times New Roman", fontsize=14)
+
 ax1.grid("True")
-ax1.legend(["Pade0", "Pade1", "Pade2", "Pade3", "Pade4"], 
+ax1.legend(["Linear Dispersion", L"Pad\'{e}1", L"Pad\'{e}2", L"Pad\'{e}3", L"Pad\'{e}4"], 
 loc="upper right", fontsize=14, edgecolor="none", facecolor="none")
 
 # ax1.text(1.0, 60.0, "JJW", fontsize=12,fontname="Times New Roman"
@@ -83,23 +86,21 @@ ax2.plot(
       , x, y4./y0.*100 .-100, "g-"
       , linewidth=1.50)
 
-        # , x, y3./y0 .-0, "m-"
-    # , x, y4./y0 .-0, "g-"
-
-ax2.set_xlabel("kh", fontname="Times New Roman", fontsize=14)
-ax2.set_ylabel("Error (%)", fontname="Times New Roman", fontsize=14)
+ax2.set_xlabel(L"$kh$", fontname="Times New Roman", fontsize=14)
+ax2.set_ylabel(L"$Error~(\%)$", fontname="Times New Roman", fontsize=14)
 # ax2.set_title("Linear dispersion", fontname="Times New Roman")
 ax2.set_xlim([0, 3pi])
-ax2.set_ylim([-10, 10])
+ax2.set_ylim([-6, 6])
 
 ax2.set_xticks([0:0.5pi:3pi]...)
 # ax2.set_xticklabels(("Tom", "Dick", "Harry", "Sally", "Sue", "Zhisong"))
-ax2.set_xticklabels(["0", "0.5pi", "1.0pi", "1.5pi", "2.0pi", "2.5pi", "3.0pi"], fontname="Times New Roman", fontsize=14)
-ax2.set_yticks([-10:2:10]...)
+ax2.set_xticklabels(["0", L"\frac{1}{2}\pi", L"\pi", L"\frac{3}{2}\pi", L"2\pi", L"\frac{5}{2}\pi", L"3\pi"]
+, fontname="Times New Roman", fontsize=14)
+ax2.set_yticks([-5:1:5]...)
 
 ax2.grid("True")
-ax2.legend(["Pade0", "Pade1", "Pade2", "Pade3", "Pade4"], 
-loc="upper left", fontsize=14, edgecolor="none", facecolor="none")
+ax2.legend(["Linear Dispersion", L"Pad\'{e}1", L"Pad\'{e}2", L"Pad\'{e}3", L"Pad\'{e}4"], 
+loc="lower right", fontsize=14, edgecolor="none", facecolor="none")
 
 
 
